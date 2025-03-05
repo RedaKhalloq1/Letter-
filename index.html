@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter</title>
+    <style>
+        body {
+            background-color: #f9e3e3; /* Soft pink background */
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            padding: 50px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .letter {
+            background-color: #ff7eb9; /* Soft pink */
+            padding: 30px;
+            border-radius: 15px;
+            display: inline-block;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .letter:hover {
+            transform: scale(1.05); /* Slight zoom on hover */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        .letter h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .message {
+            display: none; /* Hidden by default */
+            font-weight: normal;
+            line-height: 1.6;
+            font-size: 18px;
+            animation: fadeIn 1s ease; /* Smooth fade-in animation */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        footer {
+            margin-top: 20px;
+            color: #888;
+            font-size: 14px;
+        }
+        /* Hide the audio controls */
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="romantic-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="letter" onclick="showMessage()">
+        <h1>💌 Click the Letter! 💌</h1>
+        <div class="message" id="message">
+            <p>لا السيفُ يفعلُ بي ما أنتِ فاعلةٌ ولا لقاءُ عدوّي مثلَ لُقياكِ ..</p>
+            <p>لو باتَ سهمٌ من الأعداءِ في كَبدي ما نالَ مِني ما نالتْهُ عيناكِ..</p>
+            <p>~ إكرام</p> <!-- Added Ikram's name here -->
+        </div>
+    </div>
+    <footer>
+        <p>Made by Reda | 05/03/2025</p>
+    </footer>
+
+    <script>
+        function showMessage() {
+            // Show the hidden message with a smooth fade-in effect
+            var message = document.getElementById("message");
+            message.style.display = "block";
+        }
+
+        // Play background music when the page loads
+        window.onload = function() {
+            var audio = document.getElementById("backgroundMusic");
+            audio.play();
+        };
+    </script>
+</body>
+</html>
